@@ -1,0 +1,5 @@
+exercises:
+    '01_Import vs RequireJS': { max_points: 0, disabled: true, grading: [{ points: 0.25, criterion: 'Dodanie importom aliasów: `helloExternal`, `worldExternal`' }, { points: 0.25, criterion: 'Poprawa domyślnego importu' }, { points: 0.25, criterion: 'Poprawa importu grupującego' }] }
+    '02_Event emitter-y': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawne odszyfrowanie hasła' }] }
+    '03_HTTP - przykład': { max_points: 0, disabled: true, grading: [{ points: 0.25, criterion: 'Dodanie brakujące wywołanie funkcji `request(phrase)`' }, { points: 0.25, criterion: 'Wykorzystanie metody ''repeat()'' do stworzenia echa' }, { points: 0.25, criterion: 'Powtórzenie frazy 3 razy w odpowiednich odstępach czasu' }] }
+    '04_Operacje na plikach': { max_points: 0, disabled: true, grading: [{ points: 0.25, criterion: 'Pobranie zawartości pliku `game.txt` używając metody `fs.readFileSync()' }, { points: 0.25, criterion: 'Modyfikacja zawartości według założeń' }, { points: 0.25, criterion: 'Zapisanie odpowiedzi do pliku o nazwie `result.txt`używając metody `fs.writeFileSync()' }] }

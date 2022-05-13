@@ -1,0 +1,2 @@
+exercises:
+    '01_Synchroniczność vs asynchroniczność': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Dodanie `setTimeout()` do wywołania funkcji `yourSymbol()` - wprowadzenie asynchroniczności do zwracanego wyniku' }] }

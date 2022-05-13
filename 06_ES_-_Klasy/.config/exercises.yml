@@ -1,0 +1,4 @@
+exercises:
+    '01_Definicja klasy': { max_points: 0, disabled: true, grading: [{ points: 0.25, criterion: 'Poprawna implementacja konstruktora' }, { points: 0.25, criterion: 'Poprawna implementacja metody `slash()`' }, { points: 0.25, criterion: 'Poprawna implementacja metody `clash()`' }, { points: 0.25, criterion: 'Poprawna implementacja metody `wave()`' }, { points: 0.25, criterion: 'Poprawna implementacja metody `getColor()`' }] }
+    '02_Metody statyczne': { max_points: 0, disabled: true, grading: [{ points: 0.25, criterion: 'Poprawne dodanie statycznej palety kolorów `palette`' }, { points: 0.25, criterion: 'Poprawna implementacja metody `getPalette()`' }] }
+    03_Dziedziczenie: { max_points: 0, disabled: true }

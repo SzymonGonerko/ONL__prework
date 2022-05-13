@@ -1,0 +1,11 @@
+exercises:
+    '01_If - Else': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawna implementacja logiki zadania' }] }
+    '02_Operator potrójny': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawna implementacja funkcji `foobar()`' }] }
+    '03_Wartości domyślne': { max_points: 0, disabled: true, grading: [{ points: 0.5, criterion: 'Poprawienie akcji domyślnej robota' }, { points: 0.5, criterion: 'poprawienie wydawania dźwięku przez robota' }] }
+    '04_Switch case': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Przepisanie kodu robota na switch / case' }] }
+    05_For: { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawne działanie kodu generującego szachownicę' }] }
+    06_While: { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawa działania pętli while' }] }
+    '07_For of': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawne użycie pętli for ... of' }] }
+    '08_For in': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Poprawne zbudowanie tablicy za pomocą pętli for ... in' }] }
+    '09_Break i continue': { max_points: 0, disabled: true, grading: [{ points: 0.5, criterion: 'Poprawne cenzurowanie frazy `bloop` za pomocą `continue`' }, { points: 0.5, criterion: 'Poprawne cenzurowanie frazy `bleep` za pomocą `break`' }] }
+    '10_Operatory typów': { max_points: 0, disabled: true, grading: [{ points: 0.5, criterion: 'Poprawna obsługa 1 osoby w grupie' }, { points: 0.5, criterion: 'Poprawna obsługa wielu osób w grupie' }] }

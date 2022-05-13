@@ -1,0 +1,3 @@
+exercises:
+    '01_Repl i wersje NodeJS': { max_points: 0, disabled: true }
+    '02_NVM i zarządzanie wersjami NodeJS': { max_points: 0, disabled: true, grading: [{ points: 1, criterion: 'Kod uruchamia się w wersji NodeJS `v0.10.48`' }] }

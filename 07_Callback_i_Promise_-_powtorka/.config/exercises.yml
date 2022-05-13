@@ -1,0 +1,4 @@
+exercises:
+    01_callback: { max_points: 0, disabled: true }
+    02_promise: { max_points: 0, disabled: true }
+    '03_async await': { max_points: 0, disabled: true }
