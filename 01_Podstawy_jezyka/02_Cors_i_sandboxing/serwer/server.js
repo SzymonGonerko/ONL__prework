@@ -5,10 +5,10 @@ const requestHandler = (request, response) => {
   console.log('Nowy request: ', request.method, request.url, request.headers);
 
   // Odkomentuj do zadania 2 i odpal ponownie serwer!
-  // response.setHeader('Access-Control-Allow-Origin', request.headers.origin);
-  // response.setHeader('Access-Control-Request-Method', '*');
-  // response.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-  // response.setHeader('Access-Control-Allow-Headers', '*');
+  response.setHeader('Access-Control-Allow-Origin', request.headers.origin);
+  response.setHeader('Access-Control-Request-Method', '*');
+  response.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+  response.setHeader('Access-Control-Allow-Headers', '*');
 
   response.writeHead(200, { 'Content-Type': 'text/plain' });
   response.end('Hello Node.js Server!')
