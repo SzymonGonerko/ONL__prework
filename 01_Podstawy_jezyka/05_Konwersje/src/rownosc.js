@@ -14,13 +14,17 @@ function findValue(obj, val, path = '') {
       if (valuePath) {
         return valuePath;
       }
-    } else if (value == val) {
+    } else if (value === val) {
+      return path + key;
+    }
+    else if (value == val) {
       return path + key;
     }
   }
 
   return '';
 }
+
 
 const myObj = {
   a: {

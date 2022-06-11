@@ -3,12 +3,13 @@
  * Upewnij się, że poprawnie rozwiązałeś poprzednie zadanie zanim przejdziesz do następnego -
  * będziesz używać tego samego kodu!
  */
-var someCondition = true;
+let someCondition = true;
+const x = {someValue: 0};
 
 if (someCondition) {
-  var x = 123;
+  x.someValue = 123;
 }
-console.log(x);
+console.log(x.someValue);
 
-x = 456;
-console.log(x);
+x.someValue = 456;
+console.log(x.someValue);
