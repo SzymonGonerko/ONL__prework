@@ -5,6 +5,25 @@
  * @returns string środek transportu - `car`, `bicycle` albo `walking`
  */
 function chooseTransportationMode(distance, weather) {
+     if (weather === 'snow') {
+        return "car"
+     }
+
+     switch (weather) {
+        case 'rain': {
+            if (distance < 500) return 'walking'
+            if (distance >= 500 && distance < 2000) return 'bicycle'
+            if (distance > 2000) return 'car'
+        }
+        case 'fair': {
+            if (distance < 1000) return 'walking'
+            if (distance >= 1000 && distance <= 4000) return 'bicycle'
+            if (distance > 4000) return 'car'
+
+        }
+     }
+
+
 }
 
 // Nie modyfikuj poniższych funkcji!
