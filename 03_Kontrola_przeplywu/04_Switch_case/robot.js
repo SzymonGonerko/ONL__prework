@@ -17,8 +17,30 @@ function emitSound() {
 function robotAction(input, shouldEmitSound) {
   // Tu umieść instrukcję if() która zadecyduje o emitowaniu dźwięku
 
+  if (shouldEmitSound) {
+    emitSound()
+  }
+
   // Tu umieść swoją instrukcję switch/case
   switch (input) {
+    case "shout": {
+      return 'MOVE BACK'
+    }
+    case "kick": {
+      return 'MOVE BACK'
+    }
+    case "call": {
+      return 'MOVE FORWARD'
+    }
+    case "waveLeft": {
+      return 'MOVE LEFT'
+    }
+    case "waveRight": {
+      return 'MOVE RIGHT'
+    }
+    default: {
+      return DEFAULT_ACTION
+    }
   }
 }
 
