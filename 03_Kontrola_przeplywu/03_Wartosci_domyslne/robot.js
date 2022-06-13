@@ -13,8 +13,8 @@ function emitSound() {
 }
 
 function robotAction(input, shouldEmitSound) {
-  const action = actionsMap[input]; // Wybierz akcję
-  emitSound(); // Spróbuj wygenerować dźwięk
+  const action = actionsMap[input] || DEFAULT_ACTION // Wybierz akcję
+  shouldEmitSound ?  emitSound() : null; // Spróbuj wygenerować dźwięk
 
   return action;
 }
