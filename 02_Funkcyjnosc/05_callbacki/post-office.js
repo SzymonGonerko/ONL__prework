@@ -44,6 +44,30 @@ function wyslijTradycyjnie(paczka, funkcjaObslugi) {
     return funkcjaObslugi(paczka, 'DORĘCZONO');
   }, 5000); // Czas doręczenia - 5000 milisekund
 }
+ function wyslijPriorytetowo(paczka, funkcjaObslugi) {
+  return setTimeout(() => {
+    return funkcjaObslugi(paczka, "Dostarczno")
+  }, 2000);
+ }
+
+ function wyslijKurierem (paczka, funkcjaObslugi) {
+  return setTimeout(() => {
+    funkcjaObslugi(paczka, "odebrano")
+  }, 1000);
+ }
+
+ function wyslijNiezdarnymKurierem (paczka, funkcjaObslugi) {
+  const paczkaPoprzjesciach = {...paczka}
+  delete paczkaPoprzjesciach.dokumenty
+  return setTimeout(() => {
+    funkcjaObslugi(paczkaPoprzjesciach, "otrzymano")
+  }, 4000)
+ }
+
+ 
 
 // Poniżej umieść swój kod. Na start masz przykład wysyłki tradycyjnej
 nadaj(mojaPaczka, wyslijTradycyjnie);
+nadaj(mojaPaczka, wyslijPriorytetowo)
+nadaj(mojaPaczka, wyslijKurierem)
+nadaj(mojaPaczka, wyslijNiezdarnymKurierem)
