@@ -4,10 +4,13 @@
  **/
 function findBooks(books, bookTooLookFor, numTries = 1) {
   console.log('Looking for "' + bookTooLookFor + '" in ' + books.length + ' books...');
-  if (!books.length) {
-    console.log('Book not found, box is already empty!');
-    return false;
-  }
+  // if (!books.length) {
+  //   console.log('Book not found, box is already empty!');
+  //   return false;
+  // }
+
+  console.log()
+  
 
   const lastBook = books.shift();
   console.log('Taking "' + lastBook + '" from the box');
@@ -16,6 +19,7 @@ function findBooks(books, bookTooLookFor, numTries = 1) {
     console.log('Found the book: "' + lastBook + '" after ' + numTries + ' tries');
     return true;
   }
+
 
   // Spróbuj znaleźć książkę ponownie, wywołując funkcję rekurencyjnie. Zauważ zwiększenie liczby prób o jeden
   return findBooks(books, bookTooLookFor, ++numTries);
@@ -34,3 +38,7 @@ const myBookCollection = [
 ];
 
 // Poniżej umieść wywołania funkcji "findBooks". Pamiętaj o dodaniu śledzenia stosu z zadania!
+
+findBooks(myBookCollection, 'Moby Dick', 3)
+findBooks(myBookCollection, 'Ulisses', 3)
+findBooks(myBookCollection, 'Harry Potter', 3)
