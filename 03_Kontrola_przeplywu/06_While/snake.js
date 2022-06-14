@@ -2,9 +2,8 @@ function generateSnake(lines, length) {
   // Używana do śledzenia aktualnego rzędu
   let currentRow = 0;
 
-  do {
+  while (currentRow < lines) {
     let snakeRow = ``;
-
     if (currentRow === 0) {
       // Zaczynamy od głowy
       snakeRow += '>-8';
@@ -15,10 +14,10 @@ function generateSnake(lines, length) {
     }
 
     let currentLength = snakeRow.length + 1; // Dodajemy jeden, tak aby pominąć znaki końca linii (dodane dalej
-    do {
+    while (currentLength < length) {
       snakeRow+='─';
       currentLength++;
-    } while (currentLength < length);
+    } 
 
     // Tutaj dodajemy znaki zakończenia linijki - wąż zazkręca
     if (currentRow % 2 !== 0) {
@@ -37,4 +36,4 @@ function generateSnake(lines, length) {
 
 generateSnake(10, 10);
 console.log('*********');
-generateSnake(5, 5);
+generateSnake(0, 5);
