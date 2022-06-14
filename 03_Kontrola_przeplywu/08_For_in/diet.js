@@ -15,8 +15,10 @@ function summarizeDiets(dietTypes) {
   // Przygotowujemy zmienną na frazy
   const phrases = [];
 
-  // Tutaj umieść swój kod
+  for (let el in diets) {
+    phrases.push(`${basePhrase}` + el + "s: " + diets[el].join(", "))
 
+  }
   return phrases;
 }
 

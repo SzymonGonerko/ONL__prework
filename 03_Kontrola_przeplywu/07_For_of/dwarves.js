@@ -5,7 +5,6 @@ function hailDwarves(dwarfNames) {
   let phrase = 'Dinner is ready! Come home ';
   for (let [key, value] of dwarves.entries()) {
     phrase +=  value;
-   
     key === dwarves.length -1 || key === dwarves.length -2 ? null :  phrase += ", "
     key === dwarves.length -2 ? phrase += " and " : null
   }
