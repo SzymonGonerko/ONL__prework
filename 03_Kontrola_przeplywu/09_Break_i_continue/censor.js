@@ -10,7 +10,18 @@ const phrases = [
 
 function censor(phrasesToCensor) {
   const censoredPhrases = [];
+  const msg = "We interrupt our program right now. We will be back shortly"
 
+for (let [key, value] of phrasesToCensor.entries()) {
+  if (value.includes("bloop")) {
+    continue
+  }
+  if (value.includes("bleep")) {
+    censoredPhrases.push(msg)
+    break
+  }
+  censoredPhrases.push(value)
+}
   return censoredPhrases;
 }
 
