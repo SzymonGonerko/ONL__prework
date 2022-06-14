@@ -20,6 +20,14 @@ class PartyGoer extends Person {
 
 function selector(clubGoers) {
   // Tutaj zaimplementuj swoją logikę
+  if (Array.isArray(clubGoers)) {
+    if(clubGoers.some(el => el instanceof PersonaNonGrata)) return false
+    if(clubGoers.every(el => el instanceof PartyGoer)) return true
+  }
+
+if (clubGoers instanceof PersonaNonGrata) return false
+if (clubGoers instanceof PartyGoer) return true
+
 }
 
 const firstGroup = [
