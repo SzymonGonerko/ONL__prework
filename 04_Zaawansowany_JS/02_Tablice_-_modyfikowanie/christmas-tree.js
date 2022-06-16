@@ -29,7 +29,7 @@ const treeElements = [
   '#####',
   '###',
   '#'
-];
+].reverse();
 
 function cTree(elements) {
   // Copy input (to mutate new table instead of input - passing by reference!)
@@ -55,7 +55,7 @@ function cTree(elements) {
     const rowElements = currentRow.split('');
 
     // MODIFY THIS ROW - use map function here - add baubles to "rowElementsWithBaubles"
-    const rowElementsWithBaubles = rowElements;
+    const rowElementsWithBaubles = rowElements.map((el, i ) => baubleGenerator(el, i));
 
     const rowWithBaubles = rowElementsWithBaubles.join('');
 

@@ -17,7 +17,7 @@ function potatoSong(numbers) {
   phrases.push('more!');
 
 
-  
+
   // HERE - transform the phrases so that the function returns only one string instead of array:
   return phrases.join(", ");
 }
