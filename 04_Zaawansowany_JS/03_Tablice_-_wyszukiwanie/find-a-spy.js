@@ -2,7 +2,8 @@
  * Modify this spy detector using `find` to find a specific person - with ID equal `IAMASPY101010`
  */
 function spyDetector(people) {
-  return people[0];
+  const enemy = people.find(el => el.id === "IAMASPY101010")
+  return enemy;
 }
 
 /**
@@ -40,7 +41,8 @@ const people = [
 ];
 
 // Modigfy this line so people that are "not welcome" won't even try to enter the casino
-const peopleThatAreAllowedToEnter = people;
+const peopleThatAreAllowedToEnter = Object.values(people).filter(el => el.isNotWelcome !== true);
+
 
 const peopleInTheCasino = bouncer(peopleThatAreAllowedToEnter);
 const spy = spyDetector(peopleInTheCasino);
