@@ -43,7 +43,23 @@ const packages = [{
 try {
   for (let package of packages) {
     // HERE - add your error handling code
-    sortPackage(package);
+    try {
+      sortPackage(package);
+    } catch (error) {
+      
+      if (error.message === 'Broken package') {
+        brokenPackages.push(error.package);
+      } 
+      
+      
+      if (error.message === "Need manual interaction") {
+        conveyor2.push(error.package)
+      }
+
+    } finally {
+      package.passthroughUsed = true
+    }
+    
   }
 } catch (err) {
   if (err.message === 'Broken package') {
