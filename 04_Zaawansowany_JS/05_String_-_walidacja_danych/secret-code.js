@@ -9,7 +9,7 @@ function secretCodeDetector(phrases) {
     // This clause waits for the first letter of keyword
     if (!shouldTrackPhrase) {
       // Implement your code here - get first letter. use `startsWith()`
-      let firstLetterIsCodewordBeginning = false;
+      let firstLetterIsCodewordBeginning = phrase.startsWith("O");
 
       // If we encounter first tracked letter - start looking for the keyword
       if (firstLetterIsCodewordBeginning) {
@@ -25,7 +25,7 @@ function secretCodeDetector(phrases) {
     if (trackedLetters.length >= codePhraseLength) {
       // Here you should detect if the phrase was properly found
       // Modify "if" clause in a way that it'll detect "OKON" keyword
-      if (false) {
+      if (trackedLetters === "OKON") {
         return true;
       }
 
