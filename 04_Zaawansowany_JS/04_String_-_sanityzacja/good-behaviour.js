@@ -6,7 +6,8 @@ const exclamations = /!/ig;
  * Modify the function code so that the person is polite
  */
 function teachManners(phrase) {
-  return phrase;
+  const newPhrase = phrase.toLowerCase().trim().replace(exclamations, "")
+  return newPhrase;
 }
 
 const johnSentences = [
