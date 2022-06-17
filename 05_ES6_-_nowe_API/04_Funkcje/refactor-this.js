@@ -1,117 +1,100 @@
 // Describes charset used in banned
 const charset = {
   border: '*',
-  whitespace: ' ',
-
-  // Corner characters:
+  whiteSpace: ' ',
   lTCorner: '*',
   rTCorner: '*',
   lBCorner: '*',
   rBCorner: '*',
 };
 
-function buildBanner(text) {
-  var pattern = '';
+const buildBanner = (text) => {
+  let pattern = '';
 
   // Add some spacing on each side of the text
-  var bannerWidth = text.length + 8;
+  let bannerWidth = text.length + 8;
 
-  var that = this;
-  function getTopborderline(char, index) {
-    var leftCorner;
-    if (that.lTCorner) {
-      leftCorner = that.lTCorner;
-    } else {
-      leftCorner = '*'; // Default value
-    }
 
-    var right_croner;
-    if (that.rTCorner) {
-      right_croner = that.rTCorner;
-    } else {
-      right_croner = '*'; //d Default value
-    }
-
+  const getTopBorderLine = (index) => {
     if (index === 0) {
-      return leftCorner;
+      return this.lTCorner || '*';;
     } else if (index === bannerWidth - 1) {
-      return right_croner;
+      return this.rTCorner || '*';
     } else {
-      return that.border || '*';
+      return this.border || '*';
     }
   }
 
   // Build first row of the banner
-  pattern += Array(bannerWidth).fill(' ').map(getTopborderline).join('');
+  pattern += Array(bannerWidth).fill(' ').map(getTopBorderLine).join('');
   pattern += '\n';
 
-  var context = this;
-  function generate_banner_middle_section(elt, index) {
+ 
+  const generateBannerMiddleSection = (element, index) => {
     if (index === 0) {
-      return context.border || '*';
+      return this.border || '*';
     } else if (index === bannerWidth - 1) {
-      return context.border || '*';
+      return this.border || '*';
     } else {
-      return context.whiteSpace || ' ';
+      return this.whiteSpace || ' ';
     }
   }
 
 
-  pattern += Array(bannerWidth).fill(' ').map(generate_banner_middle_section).join('');
+  pattern += Array(bannerWidth).fill(' ').map(generateBannerMiddleSection).join('');
   pattern += '\n';
 
-  function generatebannertextline(elt, index) {
+  const generateBannerTextLine = (element, index) => {
     if (index === 0) {
-      return that.border || '*';
+      return this.border || '*';
     } else if (index === bannerWidth - 1) {
-      return that.border || '*';
+      return this.border || '*';
     } else {
-      const text_index = index - (bannerWidth - text.length) / 2;
-      return text[text_index] || ' ';
+      const textIndex = index - (bannerWidth - text.length) / 2;
+      return text[textIndex] || ' ';
     }
   }
 
-  pattern += Array(bannerWidth).fill(' ').map(generatebannertextline).join('');
+  pattern += Array(bannerWidth).fill(' ').map(generateBannerTextLine).join('');
   pattern += '\n';
 
   // Generate another empty line
-  pattern += Array(bannerWidth).fill(' ').map(generate_banner_middle_section).join('');
+  pattern += Array(bannerWidth).fill(' ').map(generateBannerMiddleSection).join('');
   pattern += '\n';
 
-  var _this = this;
-  function generate__bottom__border(elt, index) {
-    var leftCorenr;
-    if (that.lTCorner) {
-      leftCorenr = that.lTCorner;
+
+  const generateBottomBorder = (element, index) => {
+    let leftCorenr;
+    if (this.lTCorner) {
+      leftCorenr = this.lTCorner;
     } else {
       leftCorenr = '*'; // Default value
     }
 
-    var right_croner;
-    if (that.rTCorner) {
-      right_croner = that.rTCorner;
+    let rightCroner;
+    if (this.rTCorner) {
+      rightCroner = this.rTCorner;
     } else {
-      right_croner = '*'; //d Default value
+      rightCroner = '*'; //d Default value
     }
 
     if (index === 0) {
       return leftCorenr;
     } else if (index === bannerWidth - 1) {
-      return right_croner;
+      return rightCroner;
     } else {
-      return that.border || '*';
+      return this.border || '*';
     }
   }
 
   // Generate bottom line
-  pattern += Array(bannerWidth).fill(' ').map(generate__bottom__border).join('');
+  pattern += Array(bannerWidth).fill(' ').map(generateBottomBorder).join('');
 
   return pattern;
 }
 
 const banner = buildBanner.bind(charset)('Test Text');
 
-console.log('Banner: ');
-console.log(banner);
 
+console.log(banner);
 console.assert(banner === '*****************\n*               *\n*   Test Text   *\n*               *\n*****************', 'Banner is not properly generated!\n\n', banner);
