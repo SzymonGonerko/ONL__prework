@@ -6,7 +6,15 @@ import _ from 'lodash';
  * @returns {*[]}
  */
 function newsFilter(newsStreams) {
-  return [[], []]; // First entry is important news, second entry - less important ones
+
+  const arr = newsStreams.concat().flat()
+
+  const withoutEmptyString = _.compact(arr)
+  const withoutDuplicates = _.uniqBy(withoutEmptyString, "id")
+  const sortedByImportance = _.partition(withoutDuplicates, "isImportant")
+
+
+  return [[...sortedByImportance[0]], [...sortedByImportance[1]]]; // First entry is important news, second entry - less important ones
 }
 
 const fbStream = [{
