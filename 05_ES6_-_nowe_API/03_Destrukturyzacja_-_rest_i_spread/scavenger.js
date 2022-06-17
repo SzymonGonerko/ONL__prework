@@ -52,7 +52,11 @@ const treasurePedestal = {
 };
 
 // This is your pocket - put gold lumps deep in the pocket (before 'hair-pin')
-let scavengerPocket = ['hair-pin', 'rope', 'car-keys'];
+let scavengerPocket = [...TREASURE.filter(el => el ==="gold"),'hair-pin', 'rope', 'car-keys'];
+
+
+const {top: {base: [ , firstGold, , , secGold]}} = treasurePedestal
+
 
 // HERE - use destructuring of object and array to get ONLY GOLD LUMPS!
 
