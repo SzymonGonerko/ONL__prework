@@ -4,6 +4,26 @@ const WAVE_SOUND = 'wooowoooow';
 
 class Lightsaber {
   // HERE ADD YOUR METHODS AND CONSTRUCTOR IMPLEMENTATION
+  constructor(color) {
+    this.x = color
+  }
+
+  slash () {
+    return SLASH_SOUND
+  }
+
+clash () {
+return CLASH_SOUND
+}
+
+wave() {
+  return WAVE_SOUND
+}
+
+getColor() {
+  return this.x
+}
+
 }
 
 const jediLightsaber = new Lightsaber('purple');
