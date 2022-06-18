@@ -3,9 +3,16 @@
  * Increments internal value every time when some code accesses `count()` computed property
  */
 const counter = {
+  init: 0,
+
   get count() {
+    this.init++
+    return this.init
   },
+
   set count(val) {
+    this.init = val
+    return this.init;
   },
 };
 
