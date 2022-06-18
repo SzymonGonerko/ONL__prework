@@ -15,8 +15,14 @@ const PALETTE = [
  */
 class Painter {
   constructor(paintCharacter) {
-    this.paintCharacter = paintCharacter;
-  }
+    this.paintCharacter = paintCharacter;      
+    }
+
+    static palette = PALETTE
+
+    static getPalette () {
+      return this.palette
+    } 
 
   // ADD STATIC PROPERTY AND STATIC METHOD HERE!
 
