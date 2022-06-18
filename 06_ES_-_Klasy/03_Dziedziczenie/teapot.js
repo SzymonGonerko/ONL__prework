@@ -23,7 +23,42 @@ class Vessel {
 }
 
 // MODIFY THIS CLASS - it should extend Vessel and satisfy the test cases
-class Teapot {
+class Teapot extends Vessel {
+  constructor(capacity) {
+    super(capacity)
+    this.greeting = 'I am a teapot'
+    this.isBoiled = false
+  }
+
+greet() {
+  return this.greeting
+}
+
+boil () {
+  this.isBoiled = true
+}
+
+pourWater(amount) {
+  super.pourWater(amount);
+  this.isBoiled = false;
+}
+
+emptyWater() {
+  super.emptyWater();
+}
+
+makeTea(howBig) {
+  if (this.waterAmount < howBig) {
+    return 'Not enough water, please refill me'
+  } else if (!this.isBoiled) {
+    return 'Water is cold, cannot make tea';
+  } else {
+    this.waterAmount = this.waterAmount - howBig;
+    return "Poured " + howBig + " ml of tea";
+  }
+
+}
+
 }
 
 const teapot = new Teapot(700);
