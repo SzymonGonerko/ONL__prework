@@ -1,16 +1,31 @@
 // HERE - implement Map of Sets to store the books - it should be an empty `Map` without any content
-let booksCollection;
+let booksCollection = new Map();
 
 //  HERE - implement the functions below
 function hasBook(category, title) {
-  return false;
+  if (booksCollection.has(category) && booksCollection.get(category).has(title)) return true
+  else return false
 }
 
 function putBook(category, title) {
-  return false;
+  if (booksCollection.has(category)) {
+    if (hasBook(category, title)) return false
+    else {
+      booksCollection.set(category, Set.add(title))
+      return true
+    }
+  } else {
+    booksCollection.set(category, new Set([title]))
+    return true
+  }
 }
 
 function removeBook(title) {
+  for (const set of booksCollection.values()) if (set.has(title)) set.delete(title)
+  
+  for (const key of booksCollection.keys()) 
+  if (booksCollection.get(key).size === 0) booksCollection.delete(key)
+    
   return title;
 }
 
