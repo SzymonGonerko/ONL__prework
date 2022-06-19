@@ -17,9 +17,23 @@ let secretPhrase = [];
 
 // Add your code to these handlers - remember about gathering the secret phrase properly!
 shouter.on('yell', phrase => {
+if ( lastTypeOfShout === 'yell') return
+    
+    if (lastTypeOfShout === 'shout' || lastTypeOfShout === undefined) {
+        secretPhrase.push(phrase.split(" ")[2])
+    }
+
+    lastTypeOfShout = 'yell'
 });
 
 shouter.on('shout', phrase => {
+if (lastTypeOfShout === 'shout') return
+
+    if (lastTypeOfShout === 'yell' || lastTypeOfShout === undefined) {
+        secretPhrase.push(phrase.split(" ")[2])
+    }
+
+    lastTypeOfShout = 'shout'
 });
 
 setTimeout(() => console.log(secretPhrase), 2000);
