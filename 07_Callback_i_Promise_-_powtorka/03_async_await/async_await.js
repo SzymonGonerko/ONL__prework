@@ -8,15 +8,13 @@ function promiseResponse(value, callback) {
 }
 
 function getAsyncNumber(number) {
-  /*
-
-    Add implementation of getAsyncNumber function in a way
-    that when called it returns a Promise object.
-
-    
-    Use promiseResponse to generate this responses.
-  */
+  return new Promise ((resolve, reject) => {
+    promiseResponse(number, resolve)
+  })
+  
 }
+
+
 
 const number0Promise = getAsyncNumber(0);
 const number1Promise = getAsyncNumber(1);
@@ -24,9 +22,12 @@ const number2Promise = getAsyncNumber(2);
 const number3Promise = getAsyncNumber(3);
 const number4Promise = getAsyncNumber(4);
 
-/*
-  Add a code to display on console numbers 
-  in order in which they have been called.
+async function getAsyncValue () {
+  await number0Promise.then((data) => {console.log(data)})
+  await number1Promise.then((data) => {console.log(data)})
+  await number2Promise.then((data) => {console.log(data)})
+  await number3Promise.then((data) => {console.log(data)})
+  await number4Promise.then((data) => {console.log(data)})
+}
 
-  Use async/await methods.
-*/
+getAsyncValue()
