@@ -1,5 +1,6 @@
-import { hello , world } from './imports.js';
-import * as helloWorldDefault from './imports.js';
+import { hello as helloExternal , world as worldExternal } from './imports.js';
+import * as helloGrouped from './imports.js';
+import helloWorldDefault from './imports.js';
 // MODIFY IMPORTS ABOVE TO PREVENT COLLISIONS
 
 // DO NOT MODIFY

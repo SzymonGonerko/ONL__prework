@@ -9,7 +9,6 @@ function promiseResponse(value, callback) {
 
 async function getAsyncNumber(number) {
   
-
   return new Promise((resolve, reject) => {
     promiseResponse(number, resolve)
   })
