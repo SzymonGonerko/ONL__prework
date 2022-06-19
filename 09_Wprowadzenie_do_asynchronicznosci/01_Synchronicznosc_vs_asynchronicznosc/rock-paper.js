@@ -19,7 +19,10 @@ const enemySymbol = () => {
 
 const yourSymbol = () => {
   // MODIFY THIS LINE - make you choosing your symbol asynchronous
-  youShown = rockPaperBeatingMap[Math.round(Math.random() * 2)];
+  setTimeout(() => {
+    youShown = rockPaperBeatingMap[Math.round(Math.random() * 2)];
+  }, 20)
+
 };
 
 // Repeats the game every 2 seconds
